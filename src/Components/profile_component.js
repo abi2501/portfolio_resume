@@ -4,11 +4,11 @@ function ProfileInfo(props) {
 
     const { id, title, img, contact_list, content_list } = props.section
 
-    const divider = id == 0 ?
+    const divider = (id === 0) ?
         <></>
         : <hr className="h-px w-full my-2 border-t-0 bg-neutral-100 " />
 
-    let profile_image = img == null ?
+    let profile_image = (img == null) ?
         <></>
         : <div className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden"><img className="w-full h-full object-cover" src={img} alt="Profile" /></div>
 
