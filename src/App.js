@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import ProfileInfo from './Components/profile_component';
+import { sectionList } from './constants/site_content.js'
 
 function App() {
+  const sectionItems = sectionList.map((section, index) =>
+    <ProfileInfo key={index} section={section} />
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="w-[85vw] h-auto mx-auto bg-customBrown text-white rounded-lg" >
+        <div className='justify-center inset-0'>
+          <div className='flex flex-col'>
+            {sectionItems}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
